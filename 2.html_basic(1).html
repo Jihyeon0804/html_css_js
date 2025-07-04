@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basic 1</title>
+</head>
+<body>
+    <h2>글자 스타일링 예제</h2>
+    <!-- 인라인 스타일 -->
+    <p style="color:rgb(143, 108, 224);">1.글자색 변경</p>
+    <p style="background-color: rgb(130, 190, 244);">2. 배경색 변경</p>
+    <p style="font-size: 20px;">3. 글자 크기 변경</p>
+    <p style="background-color: rgb(71, 71, 117); font-size: 25px; text-align: center;">4. 복합 스타일링</p>
+
+    <h2>link와 이미지 삽입</h2>
+    <!-- _blank는 새 탭으로 이동 -->
+    <div>
+        <a href="https://www.naver.com" target="_blank">네이버</a>
+    </div>
+    <div>
+        <a href="https://www.google.com" target="_blank">
+            <!-- alt 이미지가 깨졌을 때 출력되는 대체 문자열, 시각 장애인용 reader기에서 인식 -->
+            <img src="https://designcompass.org/wp-content/uploads/2025/05/google-new-logo-04.jpg"
+             alt="구글아이콘" width="250px" height="200px" style="border: 3px solid black;">
+        </a>
+    </div>
+    
+    <h2>리스트(ol - 순서가 있는, ul - 순서가 없는)</h2>
+    <ol style="list-style-type: upper-roman;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ol>
+    <ul style="list-style-type: square;">
+        <li>아이템A</li>
+        <li>아이템B</li>
+        <li>아이템C</li>
+    </ul>
+
+    <h2>테이블 예제</h2>
+    <table border="1" style="border-collapse: collapse;">
+        <caption>테이블명</caption>
+        <thead>
+            <tr>
+                <th>컬럼1</th>
+                <th>컬럼2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>데이터1-A</td>
+                <td>데이터1-B</td>
+            </tr>
+            <tr>
+                <td>데이터2-A</td>
+                <td>데이터2-B</td>
+            </tr>
+            <tr>
+                <td>데이터3-A</td>
+                <td>데이터3-B</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- 테이블 만들기 실습 -->
+     <table border="1" style="border-collapse: collapse;">
+        <caption>POST</caption>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>contents</th>
+                <th>author_email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>title1</td>
+                <td>aaa</td>
+                <td>aaa@naver.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>title2</td>
+                <td>bbb</td>
+                <td>bbb@google.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>title3</td>
+                <td>ccc</td>
+                <td>ccc@google.coom</td>
+            </tr>
+        </tbody>
+     </table>
+</body>
+</html>

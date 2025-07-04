@@ -26,7 +26,8 @@
         <div>
             <label for="address">주소</label>
             <!-- size : input 박스의 크기, maxlength : 입력 가능 글자 수 제한 -->
-            <input type="text" name="address" id="address" size="30" maxlength="30">
+             <!-- readonly : 수정 불가(서버로 전송은O), disable : 수정 불가(서버로 전송도X) -->
+            <input type="text" name="address" id="address" size="30" maxlength="30" readonly>
         </div>
 
         <div>
@@ -36,7 +37,7 @@
 
         <div>
             <label for="gender">성별</label>
-            <input type="radio" name="gender" value="male">남성
+            <input type="radio" name="gender" value="male" checked>남성
             <input type="radio" name="gender" value="female">여성
         </div>
 
@@ -64,6 +65,11 @@
                 <option value="guest">방문자</option>
                 <option value="user">일반유저</option>
             </select>
+        </div>
+
+        <div>
+            <label for="profile_image">증명사진</label>
+            <input type="file" name="profile_image" accept="image/*">
         </div>
 
         <div>

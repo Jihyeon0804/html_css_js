@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+</head>
+<body>
+    <!-- select : 사칙연산 기호 -->
+    <!-- input 값 2개 받기 -->
+    <!-- 실행 버튼 클릭 시 결과값 글자가 연산 결과로 바뀌도록 설정 -->
+    <!-- html의 요소는 기본적으로 전부 문자 -> 포맷팅 필요 -->
+    <select name="cal" id="cal" style="width: 50px;">
+        <option value="plus">+</option>
+        <option value="minus">-</option>
+        <option value="multi">*</option>
+        <option value="div">/</option>
+    </select>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="cal()" id="button">실행</button>
+    <p id="result">결과값</p>
+
+
+    <input type="text" id="test">
+    <button onclick="dataGet()">데이터 get</button>
+    <script>
+        function dataGet() {
+            const myValue = document.getElementById("test").value;
+            console.log(myValue);
+        }
+
+
+        function cal() {
+            const op = document.getElementById("cal").value;
+            const num1 = Number(document.getElementById("num1").value);
+            const num2 = Number(document.getElementById("num2").value);
+            
+            if (op == "plus") {
+                document.getElementById("result").innerHTML = num1 + num2;
+            } else if (op == "minus") {
+                document.getElementById("result").innerHTML = num1 - num2;
+            } else if (op == "multi") {
+                document.getElementById("result").innerHTML = num1 * num2;
+            } else if (op == "div") {
+                document.getElementById("result").innerHTML = num1 / num2;
+            }
+        }
+    </script>
+</body>
+</html>

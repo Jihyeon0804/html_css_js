@@ -31,7 +31,6 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>userId</th>
                     <th>title</th>
                 </tr>
             </thead>
@@ -45,9 +44,9 @@
         async function getPostList() {
             // axios.get("https://jsonplaceholder.typicode.com/posts").data로 데이터를 가져올 수 없음
             // await 까지 포함해서 데이터를 받아온 후에 .data 해주어야 함
-            const postList = (await axios.get("https://jsonplaceholder.typicode.com/posts")).data;
+            const postList = (await axios.get("http://localhost:8080/post/list")).data;
             for (let i = 0; i < postList.length; i++) {
-                document.getElementById("tbodyId").innerHTML += `<tr><td>${postList[i].id}</td><td>${postList[i].userId}</td><td>${postList[i].title}</td></tr>`;
+                document.getElementById("tbodyId").innerHTML += `<tr><td>${postList[i].id}</td><td>${postList[i].title}</td></tr>`;
             }
         }
         getPostList();      // 바로 실행

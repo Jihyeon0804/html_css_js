@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원 목록 조회</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav class="navbar bg-dark navbar-dark navbar-expand-lg">
@@ -24,28 +25,37 @@
 
     <div class="container">
         <h3>게시글 상세 조회</h3>
+        <input type="text" id="input">
+        <button class="btn btn-primary" onclick="getPost()">조회</button>
         <table class="table">
             <tr>
-                <th>ID</th>
-                <td>1</td>
+                <td>id</td>
+                <td id="id"></td>
             </tr>
             <tr>
-                <th>글쓴이</th>
-                <td>aaa</td>
+                <td>제목</td>
+                <td id="title"></td>
             </tr>
             <tr>
-                <th>제목</th>
-                <td>hello world</td>
+                <td>내용</td>
+                <td id="contents"></td>
             </tr>
-            <tr>
-                <th>내용</th>
-                <td>aaaaaaa</tr>
-            </tr>
-            <tr>
-                <th>작성일</th>
-                <td>2025-07-07</td>
-            </tr>
-        </table>
+    </table>
     </div>
+
+    <script>
+        async function getPost(){
+            try {
+            let id = document.getElementById("input").value;
+            const result = (await axios.get(`http://localhost:8080/post/detail/${id}`)).data;
+            document.getElementById("id").innerHTML = result.id;
+            document.getElementById("title").innerHTML = result.title;
+            document.getElementById("contents").innerHTML = result.contents;
+            } catch (e) {
+                console.log(e);
+                alert("입력값이 잘못됐습니다.")
+            }
+        }
+  </script>
 </body>
 </html>

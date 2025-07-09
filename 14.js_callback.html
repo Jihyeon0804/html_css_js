@@ -7,12 +7,41 @@
 </head>
 <body>
     <button onclick="basicFunction()">일반 함수 예제</button>
-    <button onclick="basicFunction()">콜백 함수 예제1</button>
+    <button onclick="callBackFunction1()">콜백 함수 예제1</button>
+    <button onclick="callBackFunction2()">콜백 함수 예제2</button>
+    <button onclick="callBackFunction3()">콜백 함수 예제3</button>
 
 
     <script>
         function basicFunction() {
             console.log("hello world");
+        }
+        
+        // 당장 실행할 것이 아니고 특정 이벤트가 발생하면 실행(비동기)하기 때문에 사용
+        function callBackFunction1() {
+            userInput((name) => {alert(name + "님 안녕하세요.")});
+        }
+
+        // 콜백 함수는 매개 변수로 함수를 전달
+        function userInput(callback) {
+            callback("홍길동");                                       // 콜백 함수 호출
+        }
+
+        function callBackFunction2() {
+            const numbers = [1, 2, 3, 4, 5];
+            numbers.forEach((a) => {console.log(a)});               // callback 함수의 일종
+            // javascript는 기본적으로 동기적으로 동작
+            console.log("hello world");
+        }
+
+        function callBackFunction3() {
+            // setTimeOut : 콜백 함수 처리 + 비동기적으로 동작하는 대표적인 함수
+            // 2초 뒤에 매개 변수로 주어지는 콜백 함수 실행
+            setTimeout(() => console.log("hello world1111"), 2000);
+            console.log("hello world222");
+
+            setTimeout(() => console.log("hello world33333"), 2000);
+            console.log("hello world4444");
         }
     </script>
 </body>
